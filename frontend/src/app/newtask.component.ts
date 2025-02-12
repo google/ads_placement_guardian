@@ -437,10 +437,7 @@ export class NewtaskComponent implements OnInit {
     this.gadsForm = this.fb.group({
       taskName: ['', [Validators.required]],
       gadsCustomerId: [''],
-      fromDaysAgo: [
-        '',
-        [Validators.required, Validators.min(0), Validators.max(90)],
-      ],
+      fromDaysAgo: ['', [Validators.required, Validators.min(0)]],
       lookbackDays: [
         '',
         [Validators.required, Validators.min(0), Validators.max(90)],
@@ -1125,13 +1122,6 @@ export class NewtaskComponent implements OnInit {
       Number(this.gadsForm.controls['lookbackDays'].value) > 90
     ) {
       this.lookback_error = true;
-      error_count++;
-    }
-    if (
-      isNaN(Number(this.gadsForm.controls['fromDaysAgo'].value)) ||
-      Number(this.gadsForm.controls['fromDaysAgo'].value) > 90
-    ) {
-      this.from_lookback_error = true;
       error_count++;
     }
     if (cus_id === '') {
