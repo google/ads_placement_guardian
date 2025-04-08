@@ -1,4 +1,4 @@
-# CPR - Channel Placement Excluder
+# Ads Placement Guardian
 
 ## Problem statement
 
@@ -27,28 +27,20 @@ Web application that can be used for performing ad-hoc placement exclusions as w
 1. Credentials for Google Ads API access - `google-ads.yaml`.
    See details here - https://github.com/google/ads-api-report-fetcher/blob/main/docs/how-to-authenticate-ads-api.md \
    Normally you need OAuth2 credentials (Client ID, Client Secret), a Google Ads developer token and a refresh token.
-1. Access to repository configured. In order to clone this repository you need
-	to do the following:
-
-	*   Visit https://professional-services.googlesource.com/new-password and
-			login with your account. Once authenticated please copy all lines in box
-			and paste them in the terminal.
 
 ### Installation
 
-The primary installation method deploys CPR into Google Cloud.
+The primary installation method deploys APG into Google Cloud.
 The procedure automates deploying all required components to the Cloud.
 
 > For local deployment please refer to [local deployment guide](docs/run-cpr-locally.md).
 1. First you need to clone the repo in Cloud Shell:
 
 ```
-git clone https://professional-services.googlesource.com/solutions/cpr_placement_excluder
+git clone https://github.com/google/ads_placement_guardian.git
 ```
 
-1. Go to the repo folder: `cd cpr_placement_excluder/`
-
-> To try latest version of Channel Placement Excluder switch to `v2` branch (`git checkout --track origin/v2`)
+1. Go to the repo folder: `cd ads_placement_guardian/`
 
 1. Optionally put your `google-ads.yaml` there or be ready to provide all Ads API credentials
 
@@ -64,7 +56,7 @@ git clone https://professional-services.googlesource.com/solutions/cpr_placement
 
 ### Usage
 
-After Google cloud installation is completed, you'll be presented with a URL when Channel Placement Exclusion is running.
+After Google cloud installation is completed, you'll be presented with a URL when Ads Placement Guardian is running.
 
 Alternatively you can open `default` services in [Appengine Services](https://corp.google.com/appengine/services) to access the application.
 > If you changed `service` name in look for this service name in Appengine.

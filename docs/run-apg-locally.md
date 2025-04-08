@@ -1,6 +1,6 @@
-# How to run Channel Placement Excluder locally
+# How to run Ads Placement Guardian locally
 
-There are two main ways you can run Channel Placement Excluder locally:
+There are two main ways you can run Ads Placement Guardian locally:
 
 * Run in containers
 * Run as a standalone script
@@ -42,7 +42,7 @@ It will create 3 services:
 * `cpr_scheduler` - execute tasks based on the schedule
 * `cpr_db` - database to store created tasks
 
-Open [http://localhost:5000](http://localhost:5000) and start using Channel Placement Excluder.
+Open [http://localhost:5000](http://localhost:5000) and start using Ads Placement Guardian.
 
 ### Run as a standalone script
 
@@ -82,5 +82,4 @@ Open [http://localhost:5000](http://localhost:5000) and start using Channel Plac
     ```
 
 
-Open [http://localhost:5000](http://localhost:5000) and start using Channel Placement Excluder.
-
+Open [http://localhost:5000](http://localhost:5000) and start using Ads Placement Guardian.

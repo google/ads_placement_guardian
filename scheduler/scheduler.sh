@@ -9,7 +9,7 @@ if [ ! -f $CRON_FILE ]; then
 fi
 set -f
 while true; do
-	curl -s -H "Accept: application/json" ${API_HOST:-cpr_backend}/api/tasks \
+	curl -s -H "Accept: application/json" ${API_HOST:-apg_backend}/api/tasks \
 		-o task_list.json
 	> crontab.txt
 	jq -c '.[]' task_list.json | while read i; do
