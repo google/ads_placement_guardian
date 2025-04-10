@@ -175,7 +175,7 @@ deploy_app() {
   if [[ $APP_EXISTS -ne 0 ]]; then
     gcloud app create --region $APPENGINE_REGION
   fi
-  # update_permissions
+  update_permissions
   gcloud app deploy -q $APPLICATION_NAME
   cd $SCRIPT_PATH
 }
