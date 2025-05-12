@@ -12,6 +12,7 @@ services:
     environment:
       - GOOGLE_API_KEY=${YOUTUBE_DATA_API_KEY}
       - GOOGLE_ADS_PATH_TO_CONFIG=/google-ads.yaml
+      - GOOGLE_APPLICATION_CREDENTIALS=/service-account.json
       - DB_HOST=apg_db
       - DB_PORT=5432
       - DB_USER=apg
@@ -20,7 +21,7 @@ services:
       - REDIS_HOST=redis
       - PYTHONDONTWRITEBYTECODE=1
       - PYTHONUNBUFFERED=1
-      - GOOGLE_ADS_API_VERSION=v16
+      - GOOGLE_ADS_API_VERSION=v19
     ports:
       - "5000:5000"
     healthcheck:
@@ -31,6 +32,7 @@ services:
     network_mode: "host"
     volumes:
       - "${GOOGLE_ADS_YAML:-$HOME/google-ads.yaml}:/google-ads.yaml"
+      - "${GOOGLE_APPLICATION_CREDENTIALS}:/service-account.json"
     restart: unless-stopped
   scheduler:
     build:
@@ -38,7 +40,7 @@ services:
     image: apg-scheduler
     container_name: apg_scheduler
     environment:
-      - API_HOST=http://apg_backend:5000
+      - API_HOST=localhost:5000
     depends_on:
       - backend
     network_mode: "host"
