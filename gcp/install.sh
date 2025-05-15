@@ -153,8 +153,9 @@ enable_api() {
 }
 
 deploy_app() {
+  local dev_install=${CPR_DEV_INSTALL:-0}
   echo -e "${COLOR}Deploying app to GAE...${NC}"
-  if [ $CPR_DEV_INSTALL == 1 ]; then
+  if [ $dev_install == 1 ]; then
     echo -e "${COLOR}Deploying development version...${NC}"
     build_frontend
     cd $SCRIPT_PATH/../backend
@@ -313,7 +314,6 @@ deploy_all() {
   enable_api
   generate_youtube_api_key
   deploy_files
-  build_frontend
   deploy_app
   create_topics
   deploy_cloud_functions
